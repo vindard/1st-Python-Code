@@ -7,9 +7,7 @@ while x < below_limit:
     if (x % 3 == 0) or (x % 5 == 0):
         l.append(x)
         sum += x
-        x += 1
-    else:
-        x +=1
+    x += 1
     
 print ('Sum: \n{} \n\nNumbers:\n{}'.format(sum,l))
 
