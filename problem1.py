@@ -12,3 +12,5 @@ while x < below_limit:
         x +=1
     
 print ('Sum: \n{} \n\nNumbers:\n{}'.format(sum,l))
+
+raw_input("Press any key to exit...")
