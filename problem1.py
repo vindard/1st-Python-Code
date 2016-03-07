@@ -11,4 +11,5 @@ while x < below_limit:
     
 print ('Sum: \n{} \n\nNumbers:\n{}'.format(sum,list))
 
+#pause for user to view results
 raw_input("Press any key to exit...")
