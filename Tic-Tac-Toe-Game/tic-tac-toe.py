@@ -19,12 +19,10 @@ def print_board():
     print "\n"
     print "       |       |    "
     print "  {0}  |  {1}  |  {2}".format(line_1['key_1'],line_1['key_2'],line_1['key_3'])
-    print "       |       |    "
-    print "________________________\n"
+    print "_______|_______|_______    "
     print "       |       |    "
     print "  {0}  |  {1}  |  {2}".format(line_1['key_4'],line_1['key_5'],line_1['key_6'])
-    print "       |       |    "
-    print "_______________________\n"
+    print "_______|_______|_______"
     print "       |       |    "
     print "  {0}  |  {1}  |  {2}".format(line_1['key_7'],line_1['key_8'],line_1['key_9'])
     print "       |       |    "
