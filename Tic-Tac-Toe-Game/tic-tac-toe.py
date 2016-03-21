@@ -81,6 +81,9 @@ entered = []
 
 get_players()
 
+print ("To play, simply type the number of the cell you would like to mark.\n")
+raw_input("> Hit 'Enter' to continue")
+
 while win_check() == False:
     if len(entered) >= 9:
         break
@@ -100,3 +103,5 @@ elif play_count % 2 == 1:
 else:
     print "\n"
     print "{} wins! ".format(player_2)*3
+
+raw_input()
