@@ -50,18 +50,19 @@ def win_check():
 def make_move():
     options = ['1','2','3','4','5','6','7','8','9']
     
+    #choose symbol
     if play_count % 2 == 1: 
         current_player = player_1   #player 1 has odd plays
         symbol = 'X'
     else:
         current_player = player_2   #player 2 has even plays
         symbol = 'O'
-        
+    
+    #take move    
     move = raw_input("{}'s ({}) move: ".format(current_player,symbol))
     while ((move in entered) or (move not in options)):  #checks for valid input
         print "Please enter a new number from 1 to 9: "
         move = raw_input("Your move: ")
-        
     entered.append(move)
     cells['key_'+move]=" "+symbol+" " #assigns move to board
     
