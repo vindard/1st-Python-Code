@@ -63,7 +63,8 @@ def make_move():
         
     move = raw_input("{}'s ({}) move: ".format(current_player,symbol))
     #check for valid number that hasn't been entered yet
-    while (move not in entered, move in options)!=(True,True):
+    while ((move in entered) or (move not in options)): 
+    #while (move not in entered, move in options)!=(True,True): <- above line was this
         print "Please enter a number from 1 to 9: "
         move = raw_input("Your move: ")
         
