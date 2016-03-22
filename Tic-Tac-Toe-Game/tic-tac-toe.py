@@ -2,12 +2,11 @@
 def get_players():
     global player_1
     global player_2
-    print "Player 1:"
-    player_1 = raw_input()
-    print "\nPlayer 2:"
-    player_2 = raw_input()
-    print ("\n""To play, simply type the number of the cell you would like to mark.")
-    raw_input("> Hit 'Enter' to continue")
+    player_1 = raw_input("Player 1:")
+    player_2 = raw_input("Player 2:")
+    raw_input("\nTo play, simply type the number of the cell you would like to mark."
+              "\n> Hit 'Enter' to continue"
+             )
     
 #prints the board
 def print_board():
