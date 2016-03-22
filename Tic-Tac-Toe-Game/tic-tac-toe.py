@@ -1,4 +1,4 @@
-line_1 = {'key_1':'[1]','key_2':'[2]','key_3':'[3]',
+cells = {'key_1':'[1]','key_2':'[2]','key_3':'[3]',
           'key_4':'[4]','key_5':'[5]','key_6':'[6]',
           'key_7':'[7]','key_8':'[8]','key_9':'[9]'}
 
@@ -18,13 +18,13 @@ def get_players():
 def print_board():
     print "\n"
     print "       |       |    "
-    print "  {0}  |  {1}  |  {2}".format(line_1['key_1'],line_1['key_2'],line_1['key_3'])
+    print "  {0}  |  {1}  |  {2}".format(cells['key_1'],cells['key_2'],cells['key_3'])
     print "_______|_______|_______    "
     print "       |       |    "
-    print "  {0}  |  {1}  |  {2}".format(line_1['key_4'],line_1['key_5'],line_1['key_6'])
+    print "  {0}  |  {1}  |  {2}".format(cells['key_4'],cells['key_5'],cells['key_6'])
     print "_______|_______|_______"
     print "       |       |    "
-    print "  {0}  |  {1}  |  {2}".format(line_1['key_7'],line_1['key_8'],line_1['key_9'])
+    print "  {0}  |  {1}  |  {2}".format(cells['key_7'],cells['key_8'],cells['key_9'])
     print "       |       |    "
     
     
@@ -32,14 +32,14 @@ def print_board():
 def win_check():
     #check for one of 8 possible key combinations
     win_options = {}
-    win_options["Option 1"] = line_1['key_1'] + line_1['key_2'] + line_1['key_3']
-    win_options["Option 2"] = line_1['key_4'] + line_1['key_5'] + line_1['key_6']
-    win_options["Option 3"] = line_1['key_7'] + line_1['key_8'] + line_1['key_9']
-    win_options["Option 4"] = line_1['key_1'] + line_1['key_4'] + line_1['key_7']
-    win_options["Option 5"] = line_1['key_2'] + line_1['key_5'] + line_1['key_8']
-    win_options["Option 6"] = line_1['key_3'] + line_1['key_6'] + line_1['key_9']
-    win_options["Option 7"] = line_1['key_1'] + line_1['key_5'] + line_1['key_9']
-    win_options["Option 8"] = line_1['key_3'] + line_1['key_5'] + line_1['key_7']
+    win_options["Option 1"] = cells['key_1'] + cells['key_2'] + cells['key_3']
+    win_options["Option 2"] = cells['key_4'] + cells['key_5'] + cells['key_6']
+    win_options["Option 3"] = cells['key_7'] + cells['key_8'] + cells['key_9']
+    win_options["Option 4"] = cells['key_1'] + cells['key_4'] + cells['key_7']
+    win_options["Option 5"] = cells['key_2'] + cells['key_5'] + cells['key_8']
+    win_options["Option 6"] = cells['key_3'] + cells['key_6'] + cells['key_9']
+    win_options["Option 7"] = cells['key_1'] + cells['key_5'] + cells['key_9']
+    win_options["Option 8"] = cells['key_3'] + cells['key_5'] + cells['key_7']
     
     if ' X  X  X ' in win_options.values():
         iswin = True
@@ -68,7 +68,7 @@ def make_move():
         move = raw_input("Your move: ")
         
     entered.append(move)
-    line_1['key_'+move]=" "+symbol+" " #assigns move to board
+    cells['key_'+move]=" "+symbol+" " #assigns move to board
     
     
 
