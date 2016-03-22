@@ -1,9 +1,4 @@
-cells = {'key_1':'[1]','key_2':'[2]','key_3':'[3]',
-          'key_4':'[4]','key_5':'[5]','key_6':'[6]',
-          'key_7':'[7]','key_8':'[8]','key_9':'[9]'}
-
-
-#Two players enter their names
+#Gets player names and prints instructions to play
 def get_players():
     global player_1
     global player_2
@@ -73,10 +68,15 @@ def make_move():
     
 
 #--------------------------------------------
+#   CODE TO RUN THE GAME
+#--------------------------------------------
 
 #these global variables need to be set
 play_count = 0
 entered = []
+cells   = {'key_1':'[1]','key_2':'[2]','key_3':'[3]',
+          'key_4':'[4]','key_5':'[5]','key_6':'[6]',
+          'key_7':'[7]','key_8':'[8]','key_9':'[9]'}
 
 #this function gets the player's names and gives instructions to play
 get_players()
