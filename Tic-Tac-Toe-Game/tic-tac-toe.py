@@ -11,8 +11,8 @@ def get_players():
     player_1 = raw_input()
     print "\nPlayer 2:"
     player_2 = raw_input()
-    print "\n"
-    
+    print ("\n""To play, simply type the number of the cell you would like to mark.")
+    raw_input("> Hit 'Enter' to continue")
     
 #prints the board
 def print_board():
@@ -54,18 +54,17 @@ def win_check():
 #function to get input for next move
 def make_move():
     options = ['1','2','3','4','5','6','7','8','9']
+    
     if play_count % 2 == 1: 
-        current_player = player_1 #player 1 has odd plays
+        current_player = player_1   #player 1 has odd plays
         symbol = 'X'
     else:
-        current_player = player_2 #player 2 has even plays
+        current_player = player_2   #player 2 has even plays
         symbol = 'O'
         
     move = raw_input("{}'s ({}) move: ".format(current_player,symbol))
-    #check for valid number that hasn't been entered yet
-    while ((move in entered) or (move not in options)): 
-    #while (move not in entered, move in options)!=(True,True): <- above line was this
-        print "Please enter a number from 1 to 9: "
+    while ((move in entered) or (move not in options)):  #checks for valid input
+        print "Please enter a new number from 1 to 9: "
         move = raw_input("Your move: ")
         
     entered.append(move)
@@ -75,14 +74,14 @@ def make_move():
 
 #--------------------------------------------
 
+#these global variables need to be set
 play_count = 0
 entered = []
 
+#this function gets the player's names and gives instructions to play
 get_players()
 
-print ("To play, simply type the number of the cell you would like to mark.\n")
-raw_input("> Hit 'Enter' to continue")
-
+#this while loop runs the game
 while win_check() == False:
     if len(entered) >= 9:
         break
@@ -92,15 +91,13 @@ while win_check() == False:
         play_count += 1
         make_move()
 
+#this block of code executes when game has ended
 print "\n"
 print_board()
 if win_check() == False:
     print "\n Draw game :)"
 elif play_count % 2 == 1:
-    print "\n"
-    print "{} wins! ".format(player_1)*3
+    print "\n"+"{} wins! ".format(player_1)*3
 else:
-    print "\n"
-    print "{} wins! ".format(player_2)*3
-
+    print "\n"+"{} wins! ".format(player_2)*3
 raw_input()
