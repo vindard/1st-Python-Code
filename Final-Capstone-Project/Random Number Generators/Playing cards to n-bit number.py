@@ -4,6 +4,9 @@ of 52 playing cards. The max value for n is 225 (log_2(52!) ~= 225).
 
 The methodology used here is similar to how one would create a base-x number.
 
+Overall methodology was inspired from:
+https://github.com/trichoplax/Playing-card-entropy-source/blob/master/PlayingCardEntropySource.py
+
 
 BASE-X NUMBERS & ENDIANNESS
 
@@ -376,8 +379,11 @@ def adjust_pulled_cards(pulled_cards,bits=128):
     split_size = cards_valid                                        #Locks the splits size
     range_split_into  = cards_all // split_size                     #Locks number of splits
     cards_valid   = cards_all - (cards_all % cards_valid)           #Resets no. of valid cards
+    print(f"----------------------------- \n"
+           "  FOR LAST CARD SELECTION"
+           "----------------------------- \n")
     print(f"Entire range: {cards_all} || Reduce range to: {split_size}")
-    print(f"Range split into: {range_split_into} sets of {split_size} each || Cards left outside range: {cards_all % cards_valid}")
+    print(f"Range split into: {range_split_into} sets of {split_size} each || Cards left outside range: {cards_all % cards_valid} \n")
     
     discard_card_rate = (cards_all % cards_valid) / cards_all * 100
     
@@ -589,3 +595,14 @@ def decNum_to_cards(num_to_change,num_of_bits=128):
     
     return pulled_cards
 
+
+if __name__ == "__main__":
+    
+    print("Please enter your cards in the format: 'suit+rank', where \n"
+          "suit is one of: 'SHDC', and\n"
+          "rank is one of: 'A23456789TJQK'\n")
+    again = "Y"
+    while again != 'N':
+        bits = int(input("How many bits?:"))
+        print(f"\nNumber as bits: {cards_to_bits(bits)}")
+        again = input("\nWould you like to go again? Y/N:").upper()
