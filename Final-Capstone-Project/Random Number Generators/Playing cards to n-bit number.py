@@ -440,7 +440,11 @@ def _div_powers_of_2(big_num):
     print(f"Check: {big_num} is divible up up to 2^{i-1} ({2**(i-1)})\n")
     return i - 1
     
-    
+
+#----------------------------------------------------------------------------
+#  RANDOM NUMBER GENERATORS
+#----------------------------------------------------------------------------
+
 def cards_to_decNum(bits=128):
     '''
     Function that prompts for a certain number of cards based on 
