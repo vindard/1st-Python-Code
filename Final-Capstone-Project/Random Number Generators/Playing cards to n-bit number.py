@@ -380,38 +380,32 @@ def adjust_pulled_cards(pulled_cards,bits=128):
     range_split_into  = cards_all // split_size                     #Locks number of splits
     cards_valid   = cards_all - (cards_all % cards_valid)           #Resets no. of valid cards
     print(f"----------------------------- \n"
-           "  FOR LAST CARD SELECTION"
+           "  FOR LAST CARD SELECTION     \n"
            "----------------------------- \n")
     print(f"Entire range: {cards_all} || Reduce range to: {split_size}")
     print(f"Range split into: {range_split_into} sets of {split_size} each || Cards left outside range: {cards_all % cards_valid} \n")
     
     discard_card_rate = (cards_all % cards_valid) / cards_all * 100
-    
-    i_before = i
-    #i //= range_split_into
-    i %= split_size
+
     # -------------/BATCHES CARDS INTO SETS-----------------
     
     # This 'if loop' left outside 'while loop' below so that it only prints once
-    if i_before >= cards_valid:
+    if i >= cards_valid:
         print(f"Will need to rechoose last card {discard_card_rate:.2f}% of times || {cards_valid} of {cards_all} valid cards")
         print(f"Will need to discard {discard_deck_rate:.2f}% of decks shuffled")
         print(f"------------------")
     
     # (range_size-1) to account for index starting at 0
-    while i_before >= cards_valid:
+    while i >= cards_valid:
         print(f"Last card '{current_card}' too large! Please discard")
         current_card = pull_another_card(pulled_cards)
         i = remaining_cards.index(current_card)
         
-        # -------------BATCHES CARDS INTO SETS------------------
-        i_before = i
-        #i //= range_split_into
-        i %= split_size
-        # -------------/BATCHES CARDS INTO SETS-----------------
-        
     # -------------BATCHES CARDS INTO SETS------------------
+    i_before            = i
     current_card_before = current_card
+    #i //= range_split_into    # Alternative way of sorting cards into sets
+    i %= split_size
     current_card = remaining_cards[i]
     print(f"Last card before: {current_card_before} (i = {i_before}) || Last card after: {current_card} (i = {i})")
     # -------------/BATCHES CARDS INTO SETS-----------------
@@ -586,7 +580,7 @@ def decNum_to_cards(num_to_change,num_of_bits=128):
     for x in reversed(temp_num_list):
         pulled_cards.append(remaining_cards.pop(x))
         
-    # Produced list is Little Endian, so for Big Endian we reverse
+    #Produced list is Little Endian, so for Big Endian we'd reverse
     #pulled_cards.reverse()
     
     print(f"----------------")
