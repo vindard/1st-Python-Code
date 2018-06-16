@@ -1,6 +1,8 @@
 import random
 n = 15
 
+# Note algorithm is not a robust sort
+# It only works if initial order is assumed as presented below
 rankings = [
 ["Einstein", "Feynmann"],
 ["Feynmann", "Gell-Mann"],
